@@ -1,5 +1,12 @@
 # Bug Tester Queries
 
+To make things a little bit interesting I decided to try out a few technologies I've been wanting to for quite some time.
+- GraphQL
+- Apollo
+- MongoDB
+
+As well as my usual flask-react stack.
+
 ## Setup
 1) Clone the repository
 2) docker-compose build
