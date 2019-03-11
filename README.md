@@ -20,3 +20,9 @@ As well as my usual flask-react stack.
 
 
 Notes: web interface was somewhat of an afterthought and is not get included in the docker, I have included a built version of the react app to simplify things
+
+
+Possible improvements:
+- http://docs.mongoengine.org/guide/querying.html#advanced-queries
+
+- batch writes
