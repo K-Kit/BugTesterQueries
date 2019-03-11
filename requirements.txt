@@ -1,0 +1,7 @@
+flask
+pymongo
+Flask-GraphQL
+graphene-mongo
+MongoEngine
+mongomock
+flask-cors

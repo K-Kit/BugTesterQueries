@@ -1,0 +1,10 @@
+.vs/VSWorkspaceState.json
+__pycache__/models.cpython-37.pyc
+.vs/ProjectSettings.json
+.vs/slnx.sqlite
+.vs/BugTesterQueries/v15/.suo
+__pycache__/database.cpython-37.pyc
+__pycache__/interfaces.cpython-37.pyc
+__pycache__/schema.cpython-37.pyc
+data/README.docx
+web/README.md
