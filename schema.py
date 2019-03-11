@@ -48,9 +48,6 @@ class Tester(MongoengineObjectType):
     def resolve_experience(self, info):
         return len(self.bugs)
 
-    # def resolve_devices(self, info):
-    #     r
-
 
 
 
@@ -74,6 +71,10 @@ class Query(graphene.ObjectType):
                             )
 
 
+    """
+    Method to resolve queries for testers by country and device
+    I'm thinking there is an easier way of accomplishing this 
+    """
     def resolve_testers(self, info,countries=["ALL"], uid=1, devices=["ALL"]):
         results = set()
         countries = list(map(lambda x: x.upper(), countries))

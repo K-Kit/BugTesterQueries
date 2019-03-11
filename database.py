@@ -11,9 +11,7 @@ BUG_PATH = DATA_DIR + '/bugs.csv'
 TESTER_DEVICE_PATH = DATA_DIR + '/tester_device.csv'
 DEVICES_PATH = DATA_DIR + '/devices.csv'
 #
-# # You can connect to a real mongo server instance by your own.
 connect('db', host=os.environ['DB_PORT_27017_TCP_ADDR'], port=27017)
-# connect('gs')
 #
 
 # ----
@@ -47,11 +45,10 @@ def create_tester_device(uid, deviceid):
     tester = Tester.objects(uid=int(uid)).first()
     device = Devices.objects(deviceid=int(deviceid)).first()
     if device in tester.devices:
-        print('tester already has device')
+        pass
     else:
         try:
             tester.update(push__devices=device)
-            # tester.update(add)
             tester.save()
         except Exception as ex:
             print(ex)
