@@ -26,3 +26,5 @@ Possible improvements:
 - http://docs.mongoengine.org/guide/querying.html#advanced-queries
 
 - batch writes
+
+- accept raw query dict
