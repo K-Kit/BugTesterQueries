@@ -1,7 +1,7 @@
 import graphene
 from graphene.relay import Node
 from graphene_mongo import MongoengineConnectionField, MongoengineObjectType
-
+import json
 import models
 
 # ----
@@ -66,7 +66,8 @@ class Query(graphene.ObjectType):
                             uid=graphene.Int(),
                             countries= graphene.List(graphene.String),
                             country=graphene.String(),
-                            devices=graphene.List(graphene.String)
+                            devices=graphene.List(graphene.String),
+                            rawquery=graphene.JSONString()
                             )
 
 
@@ -74,9 +75,13 @@ class Query(graphene.ObjectType):
     Method to resolve queries for testers by country and device
     I'm thinking there is an easier way of accomplishing this 
     """
-    def resolve_testers(self, info,countries=["ALL"], uid=1, devices=["ALL"]):
+    def resolve_testers(self, info,countries=["ALL"], uid=1, devices=["ALL"], rawquery=None):
         results = set()
         countries = list(map(lambda x: x.upper(), countries))
+        print(rawquery, type(rawquery))
+        # for this to work we will need to parse field types
+        if rawquery is not None:
+            return list(models.Tester.objects(__raw__=rawquery).all())
 
         if not_none_or_all(countries):
             query_result = models.Tester.objects(country__in=countries).all()

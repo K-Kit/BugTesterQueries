@@ -4,11 +4,9 @@ from flask_graphql import GraphQLView
 from schema import schema
 import os
 from pymongo import MongoClient
-from flask_cors import CORS
 import flask
 
 app = Flask(__name__, static_folder='web/build/static', template_folder='web/build')
-CORS(app)
 app.debug = True
 
 default_query = '''
